@@ -1,0 +1,91 @@
+<form name="form" novalidate ng-submit="submit()">
+
+  <div class="modal-header">
+    <h4>{{ header }}</h4>
+  </div><!-- modal-header -->
+
+  <div class="modal-body">
+      <div class="control-group bottomSpace2">
+        <div class="controls labelMove">
+          <input type="text"
+                 id="name"
+                 name="name"
+                 ng-model="output.summary"
+                 ng-required="true"
+                 ng-maxlength="50">
+          <label for="name">Summary</label>
+
+          <div class="popover fade bottom in"
+            ng-show="form.name.$error.required && (form.name.$dirty ||
+              form.name.$touched)">
+            <div class="arrow"></div>
+            <div class="popover-content">Summary is required!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group topSpace6 bottomSpace6">
+        <div class="controls labelStatic customSelect selectMedium">
+          <select id="analyticId"
+                  name="analytic_id"
+                  ng-model="output.analytic_id"
+                  ng-options="analytic._id as analytic.name for analytic in analyticsOptions">
+            <option value="" data-i18n="select_an_option"></option>
+          </select>
+          <label>Analytic</label>
+        </div>
+      </div><!-- control-group -->
+
+      <div class="control-group bottomSpace2">
+        <div class="controls labelMove">
+          <textarea rows="4"
+                    name="description"
+                    maxlength="100"
+                    ng-model="output.description">
+          </textarea>
+          <label>Description</label>
+        </div>
+      </div><!-- control-group -->
+
+      <div class="control-group customRadio bottomSpace2">
+        <label>Progress Measure</label>
+
+        <ul class="unstyled clearfix">
+            <li class="controls">
+                <input type="radio"
+                       ng-model="output.type"
+                       name="type"
+                       id="Manual"
+                       value="manual">
+                <label for="Manual">Manual</label>
+            </li>
+
+            <li class="controls">
+                <input type="radio"
+                       ng-model="output.type"
+                       name="type"
+                       id="Automatic"
+                       value="automatic">
+                <label for="Automatic">Automatic</label>
+            </li>
+        </ul>
+        <div class="popover fade bottom in"
+             ng-show="form.type.$error.required &&
+                     ((form.type.$pristine && isSaveCalled))">
+          <div class="arrow"></div>
+          <div class="popover-content">Type is required!</div>
+        </div>
+      </div>
+  </div><!-- modal-body -->
+
+  <div class="modal-footer btnWrap">
+    <input type="submit"
+           class="btnPrimary pull-left rightSpace2"
+           value="Save"
+           ng-disabled="form.$invalid">
+    <a href="javascript:void(0);"
+       class="pull-left topSpace2"
+       ng-click="cancel()"
+       data-i18n="cancel"></a>
+  </div><!-- modal-footer -->
+</form>

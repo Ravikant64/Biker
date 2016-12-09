@@ -1,0 +1,53 @@
+<div class="modal-header clearfix">
+  <h4 class="pull-left" data-i18n="analytics.pin_to_dashboard_popup.pin_to_dashboard_settings"></h4>
+  <a href="javascript:void(0);" class="icon-close pull-right" ng-click="cancel()">
+  </a>
+</div><!-- modal-header -->
+
+<alert-bar error-type="danger" error-list="errors"></alert-bar>
+
+<div class="mediumHeader modal-body">
+  <form name="form" ng-submit="submit()">
+    <div class="control-group topSpace6">
+      <div class="controls labelStatic customSelect">
+        <select
+                name="dashboardId"
+                id="dashbord_{{project.id}}"
+                ng-model="project.dashboard_id"
+                ng-options="item.id as item.name for item in dashboards"
+                required>
+          <option value=""
+                  data-i18n="analytics.pin_to_dashboard_popup.select_dashboard">
+          </option>
+        </select>
+        <label for="dashbord_{{project.id}}"
+               data-i18n="analytics.pin_to_dashboard_popup.dashboard">
+        </label>
+        <div class="popover fade bottom in"
+             ng-show="form.dashboardId.$error.required &&
+                      (form.dashboardId.$dirty ||
+                      form.dashboardId.$touched)">
+            <div class="arrow"></div>
+          <div class="popover-content"
+               data-i18n="analytics.pin_to_dashboard_popup.dashboard_required">
+          </div>
+        </div>
+      </div><!-- customSelect -->
+    </div>
+    <table>
+      <tbody class="table">
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="Done"
+            class="btnPrimary pull-left rightSpace2"
+            ng-disabled="form.$invalid"></input>
+            <a href="javascript:void(0)"
+              class="btnPrimary pull-left rightSpace2"
+              data-i18n="cancel"
+              ng-click="cancel()"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

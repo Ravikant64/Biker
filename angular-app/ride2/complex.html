@@ -1,0 +1,95 @@
+<div class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+		    <div class="container">
+            <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">{{title}}</h4>    
+            <form class="form-horizontal" role="form" ng-submit='save()'>
+                <span ng-show="message">{{message}}</span>
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="firstName" placeholder="First Name" class="form-control" ng-model="user.fname" autofocus>
+                        <!-- <span ng-show="errorName">{{errorName}}</span> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="lastName" placeholder="First Name" class="form-control" ng-model="user.lname" >
+                        <!-- <span ng-show="errorName">{{errorName}}</span> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" id="email" placeholder="Email" class="form-control" ng-model="user.email">
+                        <!-- <span ng-show="errorEmail">{{errorEmail}}</span> -->
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="col-sm-3 control-label">Address</label>
+                    <div class="col-sm-6">
+                        <input type="date" id="address" class="form-control" ng-model="user.address">
+                    </div>
+                    <!-- <span ng-show="errorDoB">{{errorDoB}} </span> -->
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="gender" name="gender" value="Female" ng-model="user.gender">Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="gender" name="gender" value="Male" ng-model="user.gender">Male
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div class="form-group">
+                    <label for="contact" class="col-sm-3 control-label">Contact</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="contact" class="form-control" ng-model="user.contact">
+                        </select> 
+                    </div>
+                    <!-- <span ng-show="errorContact">{{errorContact}}</span> -->
+                </div> <!-- /.form-group -->
+                
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" id="password" placeholder="Password" class="form-control" ng-model="user.password">
+                        <!-- <span ng-show="errorPassword">{{errorPassword}}</span> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword" class="col-sm-3 control-label">Confirm Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" id="cpassword" placeholder="Password" class="form-control" ng-model="user.cpassword">
+                        <!-- <span ng-show="errorPassword">{{errorPassword}}</span> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-5 col-sm-offset-3">
+                        <button type="submit" class="btn button button--red button--main">Signup</button>
+                    </div>
+                </div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="close()" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" ng-click="cancel()" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

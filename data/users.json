@@ -1,0 +1,16 @@
+[
+	{
+		"user_id" : "1",
+		"name":"Ravikant",
+		"email":"ravik.sankpal@yahoo.com",
+		"birthdate":"01/06/2016",
+		"contact":"12345678"
+	},
+	{
+		"user_id" : "2",
+		"name":"Omkar",
+		"email":"omkar.kakade@yahoo.com",
+		"birthdate":"01/06/2016",
+		"contact":"12345678"
+	}
+]

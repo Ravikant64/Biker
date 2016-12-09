@@ -1,0 +1,65 @@
+<a class="button btn button--red button--main pull-right" ng-click="createRide()">Create Ride</a>
+<section class="biker-club">
+      <div class="container">
+        <div class="row row--main-shop">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+            <aside class="shop-aside">
+              <div class="shop-aside__block wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1.5s">
+                <h2 class="shop-title">Bike Categories<span class="line line--title line--shop"><span class="line__first"></span><span class="line__second"></span></span></h2>
+                <ul class="triangle-list triangle-list--shop">
+                  <li class="triangle triangle-list__one"><input type="radio" name="category" id="category" ng-model="search.type" value="individual"> Individual Ride</a></li>
+                  <li class="triangle triangle-list__one"><input type="radio" name="category" id="category" ng-model="search.type" value="club">Club Ride</a></li>
+                </ul>
+              </div>
+              <div class="shop-aside__block wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1.5s">
+                <h2 class="shop-title">Filter by Location<span class="line line--title line--shop"><span class="line__first"></span><span class="line__second"></span></span></h2>
+                <div class="clearfix" >
+                  <select ng-model="search.location">
+                    <option ng-repeat="ride in rides" value="{{ride.location}}">{{ride.location}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="shop-aside__block wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1.5s">
+                <h2 class="shop-title">Brand<span class="line line--title line--shop"><span class="line__first"></span><span class="line__second"></span></span></h2>
+                <div class="clearfix" >
+                  <select ng-model="search.brand">
+                    <option ng-repeat="ride in rides" value="{{ride.brand}}">{{ride.brand}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="shop-aside__block wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1.5s">
+                <h2 class="shop-title">Filter By Date<span class="line line--title line--shop"><span class="line__first"></span><span class="line__second"></span></span></h2>
+                <div class="clearfix">
+                  <h4 class="no-decoration">From Date: </h4>
+                  <input type="date" name="from_date" ng-model="fromdate">
+                  <h4 class="no-decoration">To Date: </h4>
+                  <input type="date" name="to_date" ng-model="todate">
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="col-lg-9 col-md-8 col-sm-7 col-xs-6">
+            <div class="shop-main">
+              <div class="event" ng-repeat="ride in rides | filter:search ">
+                <div class="row row--no-padding" >
+                  <div class="col-xs-6">
+                    <div class="event__info clearfix">
+                      <h3 class="event__title">{{ride.name}}</h3>
+                      <div class="event__time">{{ride.location}}<span>|</span>  {{ride.brand}}</div>
+                      <div class="event__addr-date clearfix"><span class="fa fa-map-marker"></span>{{ride.from}} TO {{ride.to}}</div>
+                      <div class="event__addr-date clearfix"><span class="fa fa-calendar-o"></span>{{ride.start}} to {{ride.end}}</div>
+                      <a class="button btn button--red button--main pull-right" ng-click="joinRide()">Join Ride</a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="event__img">
+                      <img src="media/370x280/event.jpg" class="img-responsive" alt="event" />
+                    </div>
+                  </div>
+                </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

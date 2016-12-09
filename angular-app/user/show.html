@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="span6 offset3">
+
+            <alert-bar error-type="danger" error-list="errors"></alert-bar>
+            <form name="addUserForm">
+              <div  class="contentOuterWrap contentBorder userDetailsWrap">
+                <div class="clearfix bottomSpace6">
+
+                  <h2 class="pull-left" >All Users</h2>
+                  
+                </div>
+                 <table class="table table-striped table-bordered">
+					<thead>
+						<th>Name</th><th>email</th><th>BirthDate</th><th>Contact</th>
+					</thead>
+					<tbody >
+						<tr ng-repeat="user in user">
+						<td>Name:{{user.name}}</td><td>{{user.email}}</td><td>{{user.birthdate}}</td><td>{{user.contact}}</td><td><button><a href="#!/{{user.user_id}}/edit">
+						Edit</a></button></td>
+						</tr>
+			        </tbody>
+				</table>
+
+
+                  </div><!-- clearfix -->
+              </div><!-- createNodeWrap -->
+        </div><!-- span8 offset2 -->
+    </div><!-- row -->
+</div><!-- container -->
